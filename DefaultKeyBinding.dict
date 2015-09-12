@@ -1,7 +1,11 @@
 { 
   // Old School function key cut-copy-paste
+  // > showing my age, plus the fact that I use Dvorak keyboard layout
+  // cut with F2
   "\UF705" = "cut:";				/* F2 */
+  // copy with F3
   "\UF706" = "copy:";				/* F3 */
+  // paste with F4
   "\UF707" = "paste:";			/* F4 */
   
   // General
