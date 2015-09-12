@@ -1,4 +1,10 @@
-{ // General
+{ 
+  // Old School function key cut-copy-paste
+  "\UF705" = "cut:";				/* F2 */
+  "\UF706" = "copy:";				/* F3 */
+  "\UF707" = "paste:";			/* F4 */
+  
+  // General
   // > defaults write -g NSTextKillRingSize -string 6
   // replace yank: command with yankAndSelect for use with the kill ring
   "^y" = (yankAndSelect:);
