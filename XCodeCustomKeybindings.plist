@@ -1,0 +1,21 @@
+	<key>LastObelus' Custom Keybindings</key>
+	<dict>
+		<key>Insert New Line Below</key>
+		<string>moveToEndOfParagraph:, insertNewline:</string>
+		<key>Insert New Line Above</key>
+		<string>moveToBeginningOfParagraph:, moveLeft:, insertNewline:</string>
+		<key>Duplicate Current Line</key>
+		<string>selectLine:, copy:, moveToEndOfLine:, insertNewline:, paste:, deleteBackward:</string>
+		<key>Delete Current Line</key>
+		<string>selectLine:, delete:</string>
+		<key>Cut Current Line</key>
+		<string>selectLine:, cut:</string>
+		<key>Copy Current Line</key>
+		<string>selectLine:, copy:</string>
+		<key>Cut Selection</key>
+		<string>cut:</string>
+		<key>Copy Selection</key>
+		<string>copy:</string>
+		<key>Paste</key>
+		<string>paste:</string>
+	</dict> 

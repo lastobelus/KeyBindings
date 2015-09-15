@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 # encoding: utf-8
 
 require 'rubygems'
@@ -47,6 +47,10 @@ outro =<<OUTRO
 
 This documentation is generated automatically from the comments and commands in the DefaultKeyBinding.dict file. The script `document_keybindings.rb` is free for use, but it's specifically designed for use with my formatting in the bindings plist (i.e. it's a little finicky).
 
+To get key bindings to work in XCode, insert a section for the macros you want with names and without shortcuts in `/Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist`. See `XCodeCustomKeybindings.plist` for an example fragment to insert. 
+
+When you do this, and restart XCode, the default keybindings for those macros will already be set, or you can customize them specifically for XCode in XCode's keybinding preferences.
+
 OUTRO
 
 toplevel = []
@@ -63,7 +67,7 @@ skip = false
 note = ''
 
 def e_sh(str)
-	str.to_s.gsub(/(?=[^a-zA-Z0-9_.\/\-\x7F-\xFF\n])/, '\\').gsub(/\n/, "'\n'").sub(/^$/, "''")
+  str.to_s.gsub(/(?=[^a-zA-Z0-9_.\/\-\u007F-\u00FF\n])/, '\\').gsub(/\n/, "'\n'").sub(/^$/, "''")
 end
 
 def translate_command(str)
@@ -71,6 +75,7 @@ def translate_command(str)
   str = str.gsub('\UF700','↑').gsub('\UF701','↓').gsub('\UF703','→').gsub('\UF702','←')
   str = str.gsub('\U0009','⇥').gsub('\U000D','↩').gsub('\U001B','⎋').gsub('\U000A','␍')
   str = str.gsub('\UF728','⌦').gsub('\177','⌫')
+  str = str.gsub('\UF705','ƒ1').gsub('\UF706','ƒ2').gsub('\UF707','ƒ3').gsub('\UF708','ƒ4').gsub('\UF709','F5').gsub('\UF70A','ƒ6').gsub('\UF70B','ƒ7').gsub('\UF70C','ƒ8').gsub('\UF70D','ƒ9').gsub('\UF70E','ƒ10').gsub('\UF70F','ƒ11').gsub('\UF710','ƒ12')
   str = str.gsub(/([\[\]|])/,"\\\1")
   str = str.gsub(/([A-Z])/,'⇧\\1').downcase
   str
